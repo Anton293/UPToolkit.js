@@ -1,0 +1,2 @@
+# LibJS
+developed lib
