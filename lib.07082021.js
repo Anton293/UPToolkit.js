@@ -1,13 +1,4 @@
-/*
-******************[UP]*****************
-[name]:(UP);
-[description]:(UP);
-[name]:(UP);
-[name]:(UP);
-[name]:(UP);
-info:
-
-*/                                                                            
+/*******************[UP]******************/                                                                            
 let UP = (doc) => {
   this.x = document.querySelector(doc);
   this.setC = (c) => { this.x.style.color = c; return this; };
@@ -65,26 +56,8 @@ UP.fill = {};
 //UP.$ = (doc)=> {return document.querySelector(doc);};       
 
   
-UP.text.findText = (txt,test) =>{
-  /*проверка наличая текста*/
-  if(txt.indexOf(test) > -1){
-    return true;
-  }
-  return false;
-}
-UP.text.findTextArray = (txt,arr,x) => {
-  /*масова перевірка тексту на наявнисть або видсутнисть текстив в тексти*/
-  if(x == true){/*щоб був хочь один наявний = true*/
-    for (var i = 0; i < arr.length; i++) {
-      if(txt.indexOf(arr[i]) > -1){ return true;}
-    }
-    return false;
-  }else if(x == false){/*щоб були всі відсутні = true*/
-    if(arr.indexOf(txt) > -1){ return false;}
-    return true;
-  }
-  console.error("UP.text.findTextArray => undefined (x[Boolean])");
-}
+
+
 UP.text.beforeDate = (txt,c) => {
   /*получить текст после последнего с*/
     let a = false;
@@ -95,33 +68,8 @@ UP.text.beforeDate = (txt,c) => {
     }
     return b;
   };
-UP.text.deleteText = (txt,a,b,c,d) => {
-      /*видаляє від 1 до 3 слів*/
-      txt = txt.split(a);
-      txt = txt.join("");
-      if(b == undefined)return txt;
-      txt = txt.split(b);
-      txt = txt.join("");
-      if(c == undefined)return txt;
-      txt = txt.split(c);
-      txt = txt.join("");
-      if(d == undefined)return txt;
-      txt = txt.split(d);
-      txt = txt.join("");
-      return txt;
-    };
-UP.text.testNull = (txt,a) => {
-      /*перевірка на пусте значення*/
-      a = (a === true);/*показуем консоль?*/
-      switch (txt) {
-        case undefined: if(a){console.error("$UP: testNull() => undefined")}; return false;
-        case null: if(a){console.error("$UP: testNull() => null")}; return false;
-        case NaN: if(a){console.error("$UP: testNull() => NaN")}; return false;
-        case '': if(a){console.error("$UP: testNull() => ''")}; return false;
-        case ' ': if(a){console.error("$UP: testNull() => ' '")}; return false;
-        default: return true;
-      }
-    };
+
+
 UP.text.getText = (txt,q,w)=>{
       /*получить текст между q,w*/
       let x = false;
@@ -133,6 +81,8 @@ UP.text.getText = (txt,q,w)=>{
       }
       return res
     };
+
+
 UP.text.multiArr = (txt,q,w,e,r,t) => {
   /*масив из разних разделителей*/
   txt = txt.split(q).join("&"+"["+q+"]");
@@ -155,38 +105,8 @@ UP.text.multiArr = (txt,q,w,e,r,t) => {
   }
   return arr;
 }
-UP.text.testText = (q,w,e) =>{
-  /*вибрать нормальне знчение */
-  switch (q) {
-    case undefined: break;
-    case null: break;
-    case NaN: break;
-    case '': break;
-    case ' ': break;
-    default: return q;
-  }
-  switch (w) {
-    case undefined: break;
-    case null: break;
-    case NaN: break;
-    case '': break;
-    case ' ': break;
-    default: return w;
-  }
-  switch (e) {
-    case undefined: break;
-    case null: break;
-    case NaN: break;
-    case '': break;
-    case ' ': break;
-    default: return e;
-  }
-  return false;
-}
-UP.text.replaceText = (q,w) =>{
-  /*заминить текст*/
-  //return q.split(q).join(w);
-}
+
+
 
 UP.url.search = (key)=> {
       /*вернуть значення GET*/
@@ -280,11 +200,5 @@ UP.fill.viewAutoType = ($url)=> {
       return $txt;
     };
 
-UP.math.testType = (a) => {
-  /*перевірка парне или непарне число*/
-    a = parseFloat(a);
-    if(parseInt(a/2) == (a/2)){return true;}
-    return false;
-  };
 
 console.log(UP);
