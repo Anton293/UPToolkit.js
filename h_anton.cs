@@ -11,6 +11,6 @@ public class Anton : Command
 {
     public override async Task Execute(Service service)
     {
-        await BotClient.SendTextMessageAsync(Message.Chat, $"танцуем", ParseMode.Markdown);
+        await BotClient.SendTextMessageAsync(Message.Chat, $"123...", ParseMode.Markdown);
     }
 }
