@@ -1,4 +1,4 @@
-# UP.js 📦
+# UPToolkit.js (UP.js) 📦
 
 Welcome to **UP.js** - a versatile JavaScript utility library designed to make DOM manipulation, text processing, and file handling easier! 🎉
 
